@@ -1,0 +1,25 @@
+<body>
+<h1> List of all directors </h1>
+
+<hr></hr>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Dob</th>
+    <th></th>
+  </tr>
+  
+  <% @num_directors.order({:dob => :desc}).each do |the_director| %>
+      <tr>
+        <th><%= the_director.id %></th>
+        <th><img class="row-image"; src="<%= the_director.image %>"; alt="Director Picture"; style="width:250px;"></img></th>
+        <th><%= the_director.name %></th>
+        <th><%= the_director.dob %></th>
+        <th><a class="row-text"; target="_blank" href="directors/<%= the_director.id %>">Show Details</a></th>
+      </tr>
+  <% end %>
+
+</body>
