@@ -1,8 +1,6 @@
 <body>
 <h1> List of all directors </h1>
-
 <hr></hr>
-
 <table border="1">
   <tr>
     <th>ID</th>
@@ -11,7 +9,6 @@
     <th>Dob</th>
     <th></th>
   </tr>
-  
   <% @num_directors.order({:dob => :desc}).each do |the_director| %>
       <tr>
         <th><%= the_director.id %></th>
