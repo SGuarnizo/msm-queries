@@ -47,4 +47,40 @@
 <hr>
 
 <h2>Filmography</h2>
+<table border="1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Year
+    </th>
+
+    <th>
+      Director
+    </th>
+
+    <th>
+    </th>
+  </tr>
+<% @movie_array.order({:year => :desc}).each do |the_movie| %>
+<tr>
+        <th><%= the_movie.id %></th>
+        <th><img class="row-image"; src="<%= the_movie.image %>"; alt="Director Picture"; style="width:250px;"></img></th>
+        <th><%= the_movie.title %></th>
+        <th><%= the_movie.year %></th>
+        <th><a class="row-text"; target="_blank" href="movies/<%= the_movie.id %>">Show Details</a></th>
+      </tr>
+<% end %>
+
+
 </body>
