@@ -17,7 +17,7 @@
         <th><%= the_movie.title %></th>
         <th><%= the_movie.year %></th>
         <th><%= Director.where({ :id => the_movie.director_id}).at(0).name %></th>
-        <th><a class="row-text"; href="movies/<%= the_movie.id %>">Show Details</a></th>
+        <th><a class="row-text"; href="/movies/<%= the_movie.id %>">Show Details</a></th>
       </tr>
   <% end %>
 </table>
