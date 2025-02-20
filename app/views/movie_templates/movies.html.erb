@@ -1,0 +1,24 @@
+<body>
+<h1> List of all movies </h1>
+<hr></hr>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th></th>
+  </tr>
+  <% @num_movies.order({:year => :desc}).each do |the_movie| %>
+      <tr>
+        <th><%= the_movie.id %></th>
+        <th><img class="row-image"; src="<%= the_movie.image %>"; alt="Movie Picture"; style="width:250px;"></img></th>
+        <th><%= the_movie.title %></th>
+        <th><%= the_movie.year %></th>
+        <th><%= Director.where({ :id => the_movie.director_id}).at(0).name %></th>
+        <th><a class="row-text"; href="movies/<%= the_movie.id %>">Show Details</a></th>
+      </tr>
+  <% end %>
+</table>
+</body>
